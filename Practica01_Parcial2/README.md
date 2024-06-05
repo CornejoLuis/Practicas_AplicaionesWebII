@@ -1,0 +1,1 @@
+![Prueba de mi api citas haciendo un GET a la api RECETA](/Capturas/image.png)
