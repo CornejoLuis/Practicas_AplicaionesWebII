@@ -1,0 +1,90 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Doctor {
+  id: Float!
+  nombre: String!
+  identificacion: String!
+  estado: Boolean!
+}
+
+type Cita {
+  id: Float!
+  descripcion: String!
+  sintoma: String!
+  fecha: String!
+  hora: String!
+  id_paciente: Float!
+  id_doctor: Float!
+  estado: Boolean!
+}
+
+type Paciente {
+  id: Float!
+  nombre: String!
+  identificacion: String!
+  estado: Boolean!
+}
+
+type Query {
+  pacientes: [Paciente!]!
+  paciente(id: String!): Paciente!
+  doctores: [Doctor!]!
+  doctor(id: String!): Doctor!
+  citas: [Cita!]!
+  cita(id: String!): Cita!
+}
+
+type Mutation {
+  createPaciente(createPacienteInput: CreatePacienteDto!): Paciente!
+  updatePaciente(id: String!, updatePacienteInput: UpdatePacienteDto!): Paciente!
+  removePaciente(id: String!): Paciente!
+  createDoctor(createDoctorInput: CreateDoctorDto!): Doctor!
+  updateDoctor(id: String!, updateDoctorInput: UpdateDoctorDto!): Doctor!
+  removeDoctor(id: String!): Doctor!
+  createCita(createCitaInput: CreateCitaDto!): Cita!
+  updateCita(id: String!, updateCitaInput: UpdateCitaDto!): Cita!
+  removeCita(id: String!): Cita!
+}
+
+input CreatePacienteDto {
+  nombre: String!
+  identificacion: String!
+}
+
+input UpdatePacienteDto {
+  nombre: String
+  identificacion: String
+  estado: Boolean
+}
+
+input CreateDoctorDto {
+  nombre: String!
+  identificacion: String!
+}
+
+input UpdateDoctorDto {
+  nombre: String
+  identificacion: String
+  estado: Boolean
+}
+
+input CreateCitaDto {
+  descripcion: String!
+  sintoma: String!
+  fecha: String!
+  hora: String!
+  id_paciente: Float!
+  id_doctor: Float!
+}
+
+input UpdateCitaDto {
+  descripcion: String
+  sintoma: String
+  fecha: String
+  hora: String
+  id_paciente: Float
+  id_doctor: Float
+  estado: Boolean
+}
